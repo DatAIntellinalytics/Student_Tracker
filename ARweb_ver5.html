@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+  <title>Status Tracker</title>
+
+  <script type="text/javascript"
+    src="https://gc.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=jUzqH0mOffQclltmJ8M19vD8PaDgW95r72uNWnEpt-MoKqWofInQDMCaFo5qV-u_hUHlNwRnOYFOlRFfQKyFRRV6iY5ZY1M2jr59ZZax9R2ZXaJNZ__TLaBtjHpETGhcKfCPWIHe1oQEoCgJT0tXUquXVeh5tkYv2ah-ymJ80couHt7NqRG2WInXsAMryeb7DlhlOqEK3ydnzRrXSYbDEvzMushnkrn1lrILSVHOCyfhjkfH70sORDRidEwOJ600QjvmrB-THM74cJdW9nLbrZTC97Fjihl1ZdT_VuG6IF4tXsw5O8NvHnssh8pof2QdcsqIX232Otz_NCxf09ygmPmGSERE7BQFxYvULnK5E6WIX_s8SvGHImrz7YOyHrKLzdVj0KM2QPN9ePuz2CgEV4uWJFzdIpy9akdn56XNhubGNeqXs9i5fsbHeR21cXdnlA-daafQ9WK-PCRYzbLZBHoOmXA3QtDVZFfcJywniEHIky8cChgXSpVZC1M6JysZbJM6LW0_5CYO-sET4_wq__UB_POABww9MbjOTTggenK7MPVxDEyRFOsv4HWZK1EEPSb3EduSZ7ml-3L6lZu0_xILIaNw9DnLIBlBb2WE8TJk8918zmk-i3YShGyUslVsMufbMBhaXPo4l5Gxgjs13ocpxVG1zhvoRxsFH4Cpp1VY_BMIU2wJi9PKxxjUuIMuvevBHmd4Bzom1SCnc4PsJO4H_9bonHlIWYwIsMcKLkMo36y6o6-BpBm5Ez9J6CZgHnSnxILbYr6a9qisUzO2L21l6hXoGiav7nelSwTZnC8LHXotMKp0Ce_8f5wUK-fLPLOsBmPBux9K5YSpxbW1SClnNKTKmcINZ4BBQ_7oj7GOENsrKvD6aHUUaisZ0FKg-JBz2v2vHg5SpM8dfoxzRvYxVySeZpQZt_NWyS0Mx4FBkcFHQsXh41VCmq0GTegSGEf8MEJZzbYHa8T35hU7B_KQhvyuhAIEXRC5SVjsAAhkeMvKAOjviuBsvxgymbP3pMkQjbEfid8Tvtv5PSrwoWjNbXGAwlRkDw98hLLwF5FcVWJTtA8D5ovxV0c1n0QxVbRWz6ESLfqdKBl1TFrFBayG3ej4r2naZPr9SSHcnEZhcGUre7BXdL-576QDZKP7y4OqAzCrjWVIfQV6BhhGJX2i6VzA64qIkgqvEDJe1-1fHtGr8Luh-cOtN70hdOqp8JUH-cT6XW02zxPVa9Jw2d4DCokvaLB9-3PDOFYcK85USUXYBS206iBlUcb4fhbDF6HPULVjWo_Cz8T12Ck1nZD79V5YMGqOGNTnKxuhHCJvU7ZNl7InU02eWSzLDgou2234gzIFbGW30vabJbysClW0a3dZwFaYIfYUY1MNTXxTG8wNIAyi1ckFXvPoQpbJ4geFphTCgWSE7elA0hgyJmS2vWS7QGNIWXoIK1fDn_4aIkzxHvjhQxnjEViWvc8NaHIRVEOTjrml2zAvamm8Ky41FBdAgIO-i3KuR3MbABkEqul83RyPU558YAczB18ot5vNEgJal91_6toHPbqvqPzNSzb6tR6cDt32A1ldmuJEm6rkgdZLB7ub6hy9CW2VFu8BaonH31kGRhYI9CDrKNlL1kplYWmkQVhUSm4BB2u8FVHfBaXe-hy26iOM6dPB9lSW6du-VKOZJ76CbUe5jg"
+    nonce="75451699094c6fc2e82dbbdbb7715b7e" charset="UTF-8"></script>
+  <link rel="stylesheet" crossorigin="anonymous"
+    href="https://gc.kis.v2.scr.kaspersky-labs.com/E3E8934C-235A-4B0E-825A-35A08381A191/abn/main.css?attr=aHR0cHM6Ly9tYWlsLWF0dGFjaG1lbnQuZ29vZ2xldXNlcmNvbnRlbnQuY29tL2F0dGFjaG1lbnQvdS8wLz91aT0yJmlrPTJkMGZlYjdmMTgmYXR0aWQ9MC4xJnBlcm1tc2dpZD1tc2ctZjoxODU1NjU3NjEzOTU2MDc0MDIzJnRoPTE5YzA5ZWM0YTg5OWNhMjcmdmlldz1hdHQmencmZGlzcD1zYWZlJnNhZGRiYXQ9QU5HamRKOFJUcXZhQzdmVnM4a2FfNGJsVjRhaVd1WUh0TEhNTjE2R1I0bkR1c2NteFltczI5a0tfTjd3aHprYWo5NEM2XzZlQ3p2bXkwSGNIWkw4QVlpUmFNUE5BMTFOcFVoWHk0NnFiSWdFak5vZ2ZXQVVUa28xMUdETHR3cEZ1R1ItXzFIX0VJTTFDZ2dwUldGRHFjQ1lqeVhtUVo0SXRWS0F0UzV6N1k0eTgzSldaS1hUTk1wc1dHUWh0VVhfU25vZjFMV2labkJiZUl0UC1OQnBiWGZfTnFCTmRmUmNuTnc4aG5GNHhndi0tbnl3Slhmd1NUaElpdjZBQXRqVjZrNXJSWTg5OVIzNHdKTURaRkM1YWtfM241TVhueldZeUI3VGRmU1JxVV91ODdYeWNJZWRVUzJ0VjdBcGhwQzlkUGZIc3haU011VlNEdUxqY0tCSkx2akxiTElXaVpmRWRiRm5Xa05odlJ6Z19mNG5EM05xeGcwRGhqaTk1cUZoTVRFZXBNVEhFekxobTU0d3lHVHhQWGF4cVhJU2s3RVU3R2lCR2pFZnN5X1REQmdURVdmMHhVTGxYU0NCUS1XeGJqQlNNZTNGNzlpMXFlVTZZaER2aDd4Y0dYNklMRExidUpQSktBa01WdUdNYnZ0OEZJR3BCbU5QV21FaDRldUdHTkVzX2YxczFjQlk0V0lSeklQSEY2WUNNSGVtVmhrcFIyYmJmUUdCdWhhcm1xcnUwQjNRQmNkNXV3VGhLYzZvZlNaTFNVZU9iQlR0TkNnRVM5SllTdW1sYWVvQ2VCa3l5bllJS20zYjBEbXhJVjFrYlNuM0E5OEdHdTZnQmZMaHBCbWVzNXF2LUoxWkNGYUpSMHNQRW1BeXBxbDFNVlBBQ1EyT0lKUS0xWlhES3c4T1YtNVZkUDd3OWFfOG9mNXlVMDk5Y3p2ZWlkUjhZdGNxeVZscWVvd04zWDVPRU5NUTJCdXdUVnU3Y2lUbjVZa25WVWFUcTJNOURydExEU2E2TlVMTUlWWWZWcklEbUVCd1dFNHVxNm1vUmYyVVV0SFN0d21ZNGNTUmM3ZWRQRFRMQ1FTZXZDWC1kLUJHV2JzYTFXZ1NEWDlsSHRab2xNa2xNTXAtNktWamRCbDJzQlNVU2ZKVjgybFRSN0E5X2FLNlhDOUlGaDl3bzM0UmYzWEhhVXFya292X19jbjRUZUxZM0lraHFfeF9Jd25DdDl6ZWJuVzRnN1RXUFNtR0lpeU9XN3lTdFAxUXNtLUp6VFlFTlZBdVd3XzFNeVdPbl80X1k4SERleWNFaDlMSjJPSUNCSkhXT09oRW91M3Itc3BQT283NldoU0xHRGdtRlo5Y1oxVnBhVFNFcTRmbGRoZ1Q4d3pBYi1WV3llUFlrRlhSMEJQeXQtU2RPUQ" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style>
+    body {
+      margin: 0;
+      font-family: Poppins, Arial;
+      background: #f2f6ff;
+      -webkit-user-select: none;
+      -webkit-touch-callout: none;
+      user-select: none;
+    }
+
+    header {
+      background: linear-gradient(90deg, #004aad, #007bff);
+      padding: 25px;
+      color: white;
+      font-size: 32px;
+      font-weight: 600;
+      text-align: center;
+      letter-spacing: 1px;
+    }
+
+    .container {
+      width: 92%;
+      margin: 25px auto;
+      background: white;
+      padding: 25px;
+      border-radius: 16px;
+      box-shadow: 0 4px 18px rgba(0, 0, 0, 0.12);
+    }
+
+    .top-controls {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .search-box {
+      flex: 1;
+      min-width: 220px;
+      padding: 12px 16px;
+      border: 2px solid #007bff;
+      border-radius: 10px;
+      font-size: 18px;
+      outline: none;
+    }
+
+    .add-btn {
+      background: #ffaa00;
+      padding: 14px 22px;
+      border: none;
+      border-radius: 12px;
+      font-size: 18px;
+      font-weight: 600;
+      cursor: pointer;
+      touch-action: manipulation;
+    }
+
+    .add-btn:active {
+      transform: scale(0.95);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 25px;
+      font-size: 18px;
+    }
+
+    th,
+    td {
+      padding: 16px 10px;
+      border-bottom: 1px solid #ccc;
+      text-align: left;
+    }
+
+    th {
+      background: #0056d6;
+      color: white;
+      font-size: 18px;
+    }
+
+    .badge {
+      padding: 6px 12px;
+      border-radius: 8px;
+      color: white;
+      font-size: 15px;
+      font-weight: 600;
+    }
+
+    .Homework {
+      background: #0099ff;
+    }
+
+    .Test {
+      background: #ff3b30;
+    }
+
+    .Buy {
+      background: #ffaa00;
+    }
+
+    .Project {
+      background: #7d3cff;
+    }
+
+    .action-btn {
+      margin-right: 6px;
+      padding: 10px 14px;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    .edit-btn {
+      background: #00a8ff;
+      color: white;
+    }
+
+    .delete-btn {
+      background: #ff3b30;
+      color: white;
+    }
+
+    .duplicate-btn {
+      background: #6c5ce7;
+      color: white;
+    }
+
+    /* Modal */
+    .modal-bg {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, .5);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      z-index: 99999;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .modal {
+      background: white;
+      width: 90%;
+      max-width: 420px;
+      padding: 25px;
+      border-radius: 16px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, .3);
+    }
+
+    .modal input,
+    .modal select {
+      width: 100%;
+      margin: 12px 0;
+      padding: 12px;
+      border-radius: 10px;
+      border: 1px solid #aaa;
+      font-size: 18px;
+    }
+
+    label {
+      font-size: 18px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding-bottom: 6px;
+    }
+
+    input[type="radio"] {
+      width: 22px;
+      height: 22px;
+    }
+
+    .save-btn {
+      background: #0056d6;
+      color: white;
+      width: 100%;
+      padding: 14px;
+      border: none;
+      border-radius: 12px;
+      font-size: 20px;
+      font-weight: 600;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>Status Tracker</header>
+
+  <div class="container">
+
+    <div class="top-controls">
+      <input id="search" class="search-box" placeholder="Search task..." onkeyup="render()" />
+      <button class="add-btn" id="addTaskBtn">+ Add Task</button>
+    </div>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Task</th>
+          <th>Subject</th>
+          <th>Type</th>
+          <th>Status</th>
+          <th>Submission Date</th>
+          <th>Day</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody id="taskBody"></tbody>
+    </table>
+
+  </div>
+
+  <!-- Modal -->
+  <div class="modal-bg" id="modalBG">
+    <div class="modal">
+      <h2 id="modalTitle">Add Task</h2>
+
+      <input id="taskName" placeholder="Task Name" />
+
+      <select id="taskSubject">
+        <option value="" disabled selected>Select Subject</option>
+        <option>English</option>
+        <option>Science1</option>
+        <option>Science2</option>
+        <option>Tamil</option>
+        <option>Maths</option>
+        <option>Social</option>
+        <option>Art</option>
+        <option>FLP</option>
+        <option>French</option>
+        <option>Computer</option>
+        <option>LifeSkills</option>
+        <option>GK</option>
+        <option>Robotics</option>
+        <option>CE</option>
+      </select>
+
+      <div style="margin: 10px 0; font-weight: 600;">Task Type</div>
+
+      <label><input type="radio" name="taskType" value="Homework" checked> Homework</label>
+      <label><input type="radio" name="taskType" value="Test"> Test</label>
+      <label><input type="radio" name="taskType" value="Buy"> Buy</label>
+      <label><input type="radio" name="taskType" value="Project"> Project</label>
+
+      <select id="taskStatus">
+        <option>Pending</option>
+        <option>In Progress</option>
+        <option>Completed</option>
+      </select>
+
+      <input type="date" id="taskDate" />
+
+      <textarea id="taskNotes" placeholder="Notes (optional)" rows="3"
+        style="width: 100%; margin: 12px 0; padding: 12px; border-radius: 10px; border: 1px solid #aaa; font-size: 18px; font-family: Poppins, Arial; resize: vertical; box-sizing: border-box;"></textarea>
+
+      <button class="save-btn" id="saveBtn">Save</button>
+    </div>
+  </div>
+
+  <script>
+    let editIndex = -1;
+
+    function load() { return JSON.parse(localStorage.getItem("tasks") || "[]"); }
+    function save(data) { localStorage.setItem("tasks", JSON.stringify(data)); }
+
+    // For iPad – ensure buttons detect touch
+    function touchify(element, handler) {
+      element.addEventListener("click", handler);
+      element.addEventListener("touchstart", handler);
+    }
+
+    touchify(document.getElementById("addTaskBtn"), () => openModal());
+
+    touchify(document.getElementById("saveBtn"), () => saveTask());
+
+    function openModal(index = -1) {
+      editIndex = index;
+      const modal = document.getElementById("modalBG");
+      modal.style.display = "flex";
+
+      if (index >= 0) {
+        const t = load()[index];
+        document.getElementById("modalTitle").innerText = "Edit Task";
+        document.getElementById("taskName").value = t.name;
+        document.getElementById("taskSubject").value = t.subject || "";
+        document.querySelector(`input[name="taskType"][value="${t.category}"]`).checked = true;
+        document.getElementById("taskStatus").value = t.status;
+        document.getElementById("taskDate").value = t.date || "";
+        document.getElementById("taskNotes").value = t.notes || "";
+      } else {
+        document.getElementById("modalTitle").innerText = "Add Task";
+        document.getElementById("taskName").value = "";
+        document.getElementById("taskSubject").value = "";
+        document.getElementById("taskDate").value = "";
+        document.getElementById("taskNotes").value = "";
+        document.querySelector(`input[name="taskType"][value="Homework"]`).checked = true;
+        document.getElementById("taskStatus").value = "Pending";
+      }
+    }
+
+    function closeModal() {
+      document.getElementById("modalBG").style.display = "none";
+    }
+
+    /* Close modal when clicking outside */
+    window.addEventListener("click", (e) => {
+      if (e.target.id === "modalBG") closeModal();
+    });
+    window.addEventListener("touchstart", (e) => {
+      if (e.target.id === "modalBG") closeModal();
+    });
+
+    function saveTask() {
+      const name = document.getElementById("taskName").value.trim();
+      const subject = document.getElementById("taskSubject").value;
+      const category = document.querySelector('input[name="taskType"]:checked').value;
+      const status = document.getElementById("taskStatus").value;
+      const date = document.getElementById("taskDate").value;
+      const notes = document.getElementById("taskNotes").value.trim();
+
+      if (!name) return alert("Task name is required!");
+
+      let tasks = load();
+
+      if (editIndex >= 0)
+        tasks[editIndex] = { name, subject, category, status, date, notes };
+      else
+        tasks.push({ name, subject, category, status, date, notes });
+
+      save(tasks);
+      closeModal();
+      render();
+    }
+
+    function deleteTask(i) {
+      if (!confirm("Delete this task?")) return;
+      let tasks = load();
+      tasks.splice(i, 1);
+      save(tasks);
+      render();
+    }
+
+    function duplicateTask(i) {
+      let tasks = load();
+      let task = tasks[i];
+      tasks.push({ ...task });
+      save(tasks);
+      render();
+    }
+
+    function render() {
+      const body = document.getElementById("taskBody");
+      const search = document.getElementById("search").value.toLowerCase();
+      let tasks = load();
+
+      body.innerHTML = tasks
+        .filter(t => t.name.toLowerCase().includes(search))
+        .map((t, i) => `
+      <tr>
+        <td>${t.name}</td>
+        <td>${t.subject || "-"}</td>
+        <td><span class="badge ${t.category}">${t.category}</span></td>
+        <td>${t.status}</td>
+        <td>${t.date || "-"}</td>
+        <td>${t.date ? new Date(t.date).toLocaleDateString('en-US', { weekday: 'long' }) : "-"}</td>
+        <td>
+          <button class="action-btn edit-btn" onclick="openModal(${i})" title="Edit"><i class="fas fa-edit"></i></button>
+          <button class="action-btn duplicate-btn" onclick="duplicateTask(${i})" title="Duplicate"><i class="fas fa-copy"></i></button>
+          <button class="action-btn delete-btn" onclick="deleteTask(${i})" title="Delete"><i class="fas fa-trash-alt"></i></button>
+        </td>
+      </tr>
+    `)
+        .join("");
+    }
+
+    render();
+  </script>
+
+</body>
+
+</html>
