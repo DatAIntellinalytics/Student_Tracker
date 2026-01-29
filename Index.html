@@ -220,6 +220,7 @@
     <table>
       <thead>
         <tr>
+          <th>S.No</th>
           <th>Task</th>
           <th>Subject</th>
           <th>Type</th>
@@ -259,12 +260,13 @@
         <option>CE</option>
       </select>
 
-      <div style="margin: 10px 0; font-weight: 600;">Task Type</div>
-
-      <label><input type="radio" name="taskType" value="Homework" checked> Homework</label>
-      <label><input type="radio" name="taskType" value="Test"> Test</label>
-      <label><input type="radio" name="taskType" value="Buy"> Buy</label>
-      <label><input type="radio" name="taskType" value="Project"> Project</label>
+      <select id="taskCategory">
+        <option value="" disabled selected>Select Task Type</option>
+        <option>Homework</option>
+        <option>Test</option>
+        <option>Buy</option>
+        <option>Project</option>
+      </select>
 
       <select id="taskStatus">
         <option>Pending</option>
@@ -307,7 +309,7 @@
         document.getElementById("modalTitle").innerText = "Edit Task";
         document.getElementById("taskName").value = t.name;
         document.getElementById("taskSubject").value = t.subject || "";
-        document.querySelector(`input[name="taskType"][value="${t.category}"]`).checked = true;
+        document.getElementById("taskCategory").value = t.category;
         document.getElementById("taskStatus").value = t.status;
         document.getElementById("taskDate").value = t.date || "";
         document.getElementById("taskNotes").value = t.notes || "";
@@ -317,7 +319,7 @@
         document.getElementById("taskSubject").value = "";
         document.getElementById("taskDate").value = "";
         document.getElementById("taskNotes").value = "";
-        document.querySelector(`input[name="taskType"][value="Homework"]`).checked = true;
+        document.getElementById("taskCategory").value = "";
         document.getElementById("taskStatus").value = "Pending";
       }
     }
@@ -337,12 +339,13 @@
     function saveTask() {
       const name = document.getElementById("taskName").value.trim();
       const subject = document.getElementById("taskSubject").value;
-      const category = document.querySelector('input[name="taskType"]:checked').value;
+      const category = document.getElementById("taskCategory").value;
       const status = document.getElementById("taskStatus").value;
       const date = document.getElementById("taskDate").value;
       const notes = document.getElementById("taskNotes").value.trim();
 
       if (!name) return alert("Task name is required!");
+      if (!category) return alert("Please select a task type!");
 
       let tasks = load();
 
@@ -381,6 +384,7 @@
         .filter(t => t.name.toLowerCase().includes(search))
         .map((t, i) => `
       <tr>
+        <td>${i + 1}</td>
         <td>${t.name}</td>
         <td>${t.subject || "-"}</td>
         <td><span class="badge ${t.category}">${t.category}</span></td>
@@ -401,6 +405,5 @@
   </script>
 
 </body>
-
 
 </html>
